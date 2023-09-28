@@ -14,6 +14,8 @@ pandas = "^2.1.1"
 pycmap = "^0.2.19"
 ipywidgets = "^8.1.1"
 jupyter = "^1.0.0"
+xarray = "^2023.9.0"
+scipy = "^1.11.3"
 
 
 [build-system]
