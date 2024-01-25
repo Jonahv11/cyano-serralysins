@@ -15,6 +15,9 @@ GENOMES=../../data/cycogs/cycogsgenomes.tsv
 # file 5 of supplemental materials from Berube et al., 2018
 # downloaded from https://figshare.com/articles/dataset/File_5_CyCOG_definitions/6007169?backTo=/collections/Single_cell_genomes_of_i_Prochlorococcus_i_i_Synechococcus_i_and_sympatric_microbes_from_diverse_marine_environments/4037048
 CYCOG_LIST=../../data/cycogs/cycogs.tsv
+# clade mappings provided as part of repository
+CLADE_MAP=../../data/metadata/updated-genome-clades.csv
+
 
 # 0. Collect user inputs
 # user inputs cycog to be pulled
@@ -40,15 +43,18 @@ if [[ ! -e ${MAP_FILE} ]]; then
     for CYCOG_STRING in `grep $CYCOG $CYCOG_LIST | cut -f 9 | awk -v FS="," '$1=$1'`; do 
         GENE=${CYCOG_STRING##*_}
         GENOME_NAME=${CYCOG_STRING%_*} 
-        GENOME_ID=$(grep ${GENOME_NAME} ${GENOMES} | cut -f 3)
-        printf "\n${GENE}\t${GENOME_ID}\t${GENOME_NAME}" >> ${TMP_MAP}
+        GENOME_ID=$(grep "${GENOME_NAME}" ${GENOMES} | cut -f 3)
+        CLADE=$(grep "${GENOME_ID}" ${CLADE_MAP} | cut -d',' -f 3)
+        printf "\n${GENE}\t${GENOME_ID}\t${GENOME_NAME}\t${CLADE}"
+        printf "\n${GENE}\t${GENOME_ID}\t${GENOME_NAME}\t${CLADE}" >> ${TMP_MAP}
     done
 
     # 2. Match leaf labels to gene ids
-    printf "leaf_id\tgene_id\tgenome_id\tgenome_name" >> ${MAP_FILE}
+    printf "leaf_id\tgene_id\tgenome_id\tgenome_name\tclade" >> ${MAP_FILE}
     for LEAF in `grep '^>' ${FASTA} | cut -d' ' -f 1 | cut -d'>' -f 2`; do
         GENE=$(echo ${LEAF} | cut -d'/' -f 1)
-        GENE_MAP=$(grep ${GENE} ${TMP_MAP})
+        GENE_MAP=$(grep "${GENE}" ${TMP_MAP})
+        printf "\n${LEAF}\t${GENE_MAP}"
         printf "\n${LEAF}\t${GENE_MAP}" >> ${MAP_FILE}
     done
     rm ${TMP_MAP}
