@@ -12,9 +12,9 @@ set -o errexit
 #raxml_script
 
 # data inputs
-FASTA_dir=../data/results/Aligned_fastas/
+FASTA_dir=../4-trim_realign/data/Aligned_fastas/
 # -s ${FASTA_dir}${fasta}
-Output_dir=../data/results/bashML/
+Output_dir=5-treebuilding/data/
 
 # output
 # Raxml trees for each fasta
