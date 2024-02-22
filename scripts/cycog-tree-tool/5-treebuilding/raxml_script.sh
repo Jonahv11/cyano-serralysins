@@ -25,5 +25,5 @@ for fasta in $(ls ${FASTA_dir});
 do
 	name=$(basename ${fasta})
 	filename=${name%.faa}
-	raxmlHPC -s ../data/results/Aligned_fastas/${fasta} -n ${filename}-scripted -m PROTGAMMAWAG -p 29813
+	raxmlHPC -s ../4-trim_realign/data/Aligned_fastas/${fasta} -n ${filename}-scripted -m PROTGAMMAWAG -p 29813
 done
