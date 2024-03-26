@@ -10,8 +10,8 @@ set -o errexit
 # set -o xtrace
 
 # data inputs
-CYCOGS=../1-serralysin-cycogs/data/serralysin_cycog_references.csv
-REFS=../../data/genomes/
+CYCOGS=../../../data/serralysin_cycog_references.csv
+REFS=../../../data/genomes/
 
 # output
 # one fasta file for each CyCOG that contains amino acit sequences of all
