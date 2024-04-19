@@ -1,0 +1,251 @@
+DATASET_COLORSTRIP
+#In colored strip datasets, each ID is associated to a color box/strip and can have an optional label. Color can be specified in hexadecimal, RGB or RGBA notation. When using RGB or RGBA notation, you cannot use COMMA as the dataset separator
+
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#					MANDATORY SETTINGS							#
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file.
+
+SEPARATOR TAB
+#SEPARATOR COMMA
+#SEPARATOR SPACE
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	Taxa
+
+#dataset color (can be changed later)
+COLOR	#ff0000
+
+#=================================================================#
+#					OPTIONAL SETTINGS							#
+#=================================================================#
+
+#If COLOR_BRANCHES is set to 1, branches of the tree will be colored according to the colors of the strips above the leaves.
+#When all children of a node have the same color, it will be colored the same, ie. the color will propagate inwards towards the root.
+COLOR_BRANCHES	0
+
+
+#=================================================================#
+#	 all other optional settings can be set or changed later	 #
+#			in the web interface (under 'Datasets' tab)			#
+#=================================================================#
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#To order legend entries horizontally instead of vertically, set LEGEND_HORIZONTAL to 1
+#Shape should be a number between 1 and 6, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+LEGEND_TITLE	RecA Taxa
+#LEGEND_POSITION_X 100
+#LEGEND_POSITION_Y 100
+#LEGEND_HORIZONTAL	1
+LEGEND_SHAPES	1	1	1
+LEGEND_COLORS	#8d99ae	#212529	#ca6702
+LEGEND_LABELS	Pro	Syn	Other
+#LEGEND_SHAPE_SCALES 1 1 0.5 1
+
+#width of the colored strip
+#STRIP_WIDTH	10
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+#MARGIN 0
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around the color strip 
+BORDER_WIDTH	1
+
+#border color; used when BORDER_WIDTH is above 0
+#BORDER_COLOR #0000ff
+
+#if set to 1, border will be drawn completely around each colored strip box
+#COMPLETE_BORDER 0
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL 0
+
+
+#display or hide the individual label inside each colored strip (when defined in the data below)
+#SHOW_STRIP_LABELS 1
+
+#position of the strip label within the box; 'top', 'center' or 'bottom'
+#STRIP_LABEL_POSITION center
+
+#strip label size factor (relative to the tree leaf labels)
+#STRIP_LABEL_SIZE_FACTOR 1
+
+
+#rotation of the strip labels; used only in rectangular tree display mode
+#STRIP_LABEL_ROTATION 0
+
+#strip label shift in pixels (positive or negative)
+#STRIP_LABEL_SHIFT 0
+
+#STRIP_LABEL_COLOR #000000
+
+#draw a black outline around the text (width in pixels)
+#STRIP_LABEL_OUTLINE 0.5
+
+#display or hide the dataset label above the colored strip
+#SHOW_LABELS 1
+
+#dataset label size factor
+#SIZE_FACTOR 1
+
+#dataset label rotation
+#LABEL_ROTATION 0
+
+#dataset label shift in pixels (positive or negative)
+#LABEL_SHIFT 0
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+
+#=================================================================#
+#		Actual data follows after the "DATA" keyword			  #
+#=================================================================#
+DATA
+
+#Examples:
+#assign a red colored strip to leaf 9606, with label 'Human'
+#9606 #ff0000 Human
+
+#assign a green, semi-transparent (alpha 0.5) strip to an internal node, without any label. If 'Show internal values' is set to 'No', this will only be displayed if the node is collapsed. 
+#9606|5664 rgba(0,255,0,0.5)
+
+ID	LABEL
+ID	LABEL
+2507313604/1-4524	#212529
+2507317924/1-63	#212529
+2563723863/1-1930	#212529
+2563725011/1-1575	#212529
+2563725051/1-1247	#212529
+2607360070/1-1354	#CA6702
+2607362085/1-64	#CA6702
+2608225692/1-507	#8D99AE
+2623919983/1-7750	#212529
+2623919985/1-2872	#212529
+2623920398/1-1159	#212529
+2626028588/1-8129	#212529
+2636129377/1-714	#8D99AE
+2646428044/1-1305	#212529
+2648680076/1-2486	#8D99AE
+2648680077/1-934	#8D99AE
+2648680656/1-339	#8D99AE
+2653032507/1-391	#8D99AE
+2667718481/1-508	#8D99AE
+2667718833/1-559	#8D99AE
+2667734045/1-524	#8D99AE
+2667740682/1-1013	#8D99AE
+2667741592/1-4130	#8D99AE
+2667741593/1-1200	#8D99AE
+2667756258/1-1120	#8D99AE
+2667763861/1-162	#8D99AE
+2667764709/1-53	#8D99AE
+2667765764/1-814	#8D99AE
+2667771808/1-2541	#8D99AE
+2667772447/1-59	#8D99AE
+2667772472/1-226	#8D99AE
+2667772551/1-68	#8D99AE
+2667775149/1-275	#8D99AE
+2667775688/1-285	#8D99AE
+2667775705/1-1489	#8D99AE
+2667775708/1-1256	#8D99AE
+2667775720/1-965	#8D99AE
+2667788030/1-139	#8D99AE
+2667796734/1-299	#8D99AE
+2667813043/1-1589	#8D99AE
+2667813144/1-768	#8D99AE
+2667813162/1-592	#8D99AE
+2667852318/1-1183	#8D99AE
+2667853352/1-2451	#8D99AE
+2667855975/1-492	#8D99AE
+2667863625/1-1058	#8D99AE
+2667901411/1-488	#8D99AE
+2667904540/1-1094	#8D99AE
+2667904611/1-834	#8D99AE
+2682085593/1-8985	#8D99AE
+2682252836/1-2348	#212529
+2682252838/1-3015	#212529
+2682253646/1-672	#212529
+2682253648/1-1595	#212529
+2682256329/1-1087	#212529
+2682256556/1-655	#212529
+2682259507/1-1205	#212529
+2682259509/1-2568	#212529
+2682260126/1-249	#212529
+2717144970/1-2566	#212529
+2717155010/1-318	#8D99AE
+2717157691/1-1897	#8D99AE
+2717169274/1-1013	#8D99AE
+2717270196/1-486	#8D99AE
+2717271340/1-899	#8D99AE
+2717275857/1-590	#8D99AE
+2717276654/1-1947	#8D99AE
+2717280266/1-1186	#8D99AE
+2717280328/1-1316	#8D99AE
+2717280330/1-948	#8D99AE
+2717280331/1-911	#8D99AE
+2717283174/1-89	#8D99AE
+2717293198/1-201	#8D99AE
+2717294023/1-63	#8D99AE
+2717294096/1-218	#8D99AE
+2717294121/1-668	#8D99AE
+2717317545/1-248	#8D99AE
+2717333819/1-2006	#8D99AE
+2717333950/1-466	#8D99AE
+2717336732/1-217	#8D99AE
+2717336734/1-1468	#8D99AE
+2717336766/1-800	#8D99AE
+2717379183/1-214	#8D99AE
+2717519014/1-692	#212529
+2717520179/1-407	#CA6702
+2717521326/1-2042	#212529
+2717522719/1-1431	#212529
+2717530284/1-1172	#212529
+2717535262/1-1353	#212529
+2717537936/1-1867	#212529
+2717574755/1-95	#8D99AE
+2717577740/1-133	#8D99AE
+2717578009/1-886	#8D99AE
+2717578010/1-647	#8D99AE
+2717578011/1-101	#8D99AE
+2717578582/1-630	#8D99AE
+2717578583/1-672	#8D99AE
+2717590135/1-1184	#212529
+2717590617/1-667	#212529
+2717604465/1-129	#212529
+2717611678/1-708	#212529
+2717624088/1-110	#8D99AE
+2717634644/1-797	#8D99AE
+2717636962/1-472	#8D99AE
+2717637231/1-802	#8D99AE
+2717637232/1-600	#8D99AE
+2717637249/1-584	#8D99AE
+2717637298/1-200	#8D99AE
+2717637463/1-688	#8D99AE
+2717637609/1-929	#8D99AE
+2717637618/1-124	#8D99AE
+2717637624/1-332	#8D99AE
+2717637658/1-993	#8D99AE
+2717637690/1-206	#8D99AE
+2717637715/1-684	#8D99AE
+2717641846/1-1925	#8D99AE
+2717642319/1-1014	#8D99AE
+2717642369/1-250	#8D99AE
+2717642371/1-869	#8D99AE
+2717647866/1-816	#8D99AE
+2717675555/1-821	#8D99AE
+2717695448/1-1791	#8D99AE
+2717697627/1-1253	#8D99AE
+2717711447/1-534	#8D99AE
+2717723546/1-461	#8D99AE
+2717723695/1-2202	#8D99AE
+2717724792/1-710	#8D99AE
