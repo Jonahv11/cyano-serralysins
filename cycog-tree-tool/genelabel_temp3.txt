@@ -1,13 +1,8 @@
 #dataset color (can be changed later)
 COLOR	#ff0000
+FIELD_SHAPES	2
+FIELD_LABELS	f2
 
-#=================================================================#
-#					OPTIONAL SETTINGS							#
-#=================================================================#
-
-#If COLOR_BRANCHES is set to 1, branches of the tree will be colored according to the colors of the strips above the leaves.
-#When all children of a node have the same color, it will be colored the same, ie. the color will propagate inwards towards the root.
-COLOR_BRANCHES	0
 
 
 #=================================================================#
