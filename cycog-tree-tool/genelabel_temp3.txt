@@ -1,5 +1,5 @@
 #dataset color (can be changed later)
-COLOR	#ff0000
+COLOR	#000000
 FIELD_SHAPES	2
 FIELD_LABELS	f2
 
