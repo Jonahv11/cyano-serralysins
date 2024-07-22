@@ -18,6 +18,7 @@ xarray = "^2023.9.0"
 scipy = "^1.11.3"
 statsmodels = "^0.14.0"
 biopython = "^1.81"
+openpyxl = "^3.1.5"
 
 
 [build-system]
